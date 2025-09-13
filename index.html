@@ -1,0 +1,538 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UCR Skin Care - Explore All Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Comic+Neue:wght@700&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Comic Neue", "Montserrat", sans-serif;
+      }
+      .font-playfair {
+        font-family: "Playfair Display", serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .flying-img {
+        position: fixed;
+        z-index: 1000;
+        pointer-events: none;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-pink-50 min-h-screen p-5 sm:p-8 relative">
+ 
+    <div class="flex justify-center mb-6">
+      <div
+        class="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg border-2 border-pink-200"
+      >
+        <i class="fas fa-spa text-pink-400 text-3xl animate-pulse"></i>
+        <h1 class="text-2xl sm:text-3xl font-bold text-pink-500 tracking-wide">
+          UCR <span class="text-pink-600">Skin Care</span> ✨
+        </h1>
+      </div>
+    </div>
+
+    
+    <header class="flex justify-between items-center mb-10">
+      <button
+        class="p-3 bg-white rounded-full shadow hover:bg-pink-100 transition"
+      >
+        <i class="fas fa-heart text-xl text-pink-400"></i>
+      </button>
+      <button
+        id="cartBtn"
+        class="relative p-3 bg-pink-300 text-white rounded-full shadow-lg hover:bg-pink-400 transition"
+      >
+        <i class="fas fa-shopping-basket text-lg"></i>
+        <span
+          id="cartCount"
+          class="absolute -top-1 -right-1 bg-red-400 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center shadow animate-bounce"
+          >0</span
+        >
+      </button>
+    </header>
+
+ 
+    <section class="mb-6 text-center">
+      <h1 class="font-playfair text-4xl sm:text-5xl font-bold text-pink-600">
+        ✨ Explore ✨
+      </h1>
+      <h2 class="font-playfair text-2xl sm:text-3xl text-pink-400">
+        All Cute Products 💖
+      </h2>
+    </section>
+
+ 
+    <section class="flex gap-4 mb-8">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search for something cute..."
+        class="flex-grow h-14 sm:h-16 px-4 rounded-full border border-pink-200 bg-white focus:ring-2 focus:ring-pink-400 outline-none shadow-sm"
+      />
+    </section>
+
+ 
+    <nav
+    id="categoryBtns"
+    class="flex gap-3 overflow-x-auto no-scrollbar pb-4 mb-8"
+  >
+    <button
+      data-category="all"
+      class="category-btn active px-6 py-2 rounded-full bg-pink-400 text-white font-medium shadow hover:bg-pink-500 transition"
+    >
+      🌸 All
+    </button>
+    <button
+      data-category="face"
+      class="category-btn px-6 py-2 rounded-full bg-pink-100 text-pink-600 font-medium hover:bg-pink-200 transition"
+    >
+      Face
+    </button>
+    <button
+      data-category="lips"
+      class="category-btn px-6 py-2 rounded-full bg-pink-100 text-pink-600 font-medium hover:bg-pink-200 transition"
+    >
+      Lips
+    </button>
+    <button
+      data-category="eyes"
+      class="category-btn px-6 py-2 rounded-full bg-pink-100 text-pink-600 font-medium hover:bg-pink-200 transition"
+    >
+      Eyes
+    </button>
+    <button
+      data-category="hair"
+      class="category-btn px-6 py-2 rounded-full bg-pink-100 text-pink-600 font-medium hover:bg-pink-200 transition"
+    >
+      Hair
+    </button>
+    <button
+      data-category="skin"
+      class="category-btn px-6 py-2 rounded-full bg-pink-100 text-pink-600 font-medium hover:bg-pink-200 transition"
+    >
+      Skin
+    </button>
+  </nav>
+  
+    
+  <section
+  id="productGrid"
+  class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+>
+
+  <article
+    class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+    data-category="face"
+    data-name="TFP Cream"
+    data-price="15.00"
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMblHrrn64_N_T5ho3ixD61YI9P3EkmmcT9w&s"
+      alt="TFP Cream"
+      class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+    />
+    <h3 class="text-base font-bold text-pink-600 mb-1">TFP Cream</h3>
+    <p class="font-bold text-gray-700">$15.00</p>
+    <button
+      class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+    >
+      Add to Cart 💖
+    </button>
+  </article>
+
+
+
+  <article
+  class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+  data-category="face"
+  data-name="Aloe VERA Cream"
+  data-price="15.00"
+>
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTS4sld4CZfuvc3PvxvCkear68sVvlY9QiuvaahRUJrlfBS0ko0B0UiFdr6eAU9MTzbPE&usqp=CAU"
+    alt="Aloe VERA Cream"
+    class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+  />
+  <h3 class="text-base font-bold text-pink-600 mb-1">Aloe VERA Cream</h3>
+  <p class="font-bold text-gray-700">$15.00</p>
+  <button
+    class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+  >
+    Add to Cart 💖
+  </button>
+</article>
+
+
+
+<article
+class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+data-category="face"
+data-name="TURMERIC Cream"
+data-price="15.00"
+>
+<img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlhRFsGQj3EkBGOivjUqiU7jRH2dWtSCrcyBmI-L9TmvTti-r1agokaYauJpoesh7k2Bg&usqp=CAU"
+  alt="TURMERIC Cream"
+  class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+/>
+<h3 class="text-base font-bold text-pink-600 mb-1">TURMERIC Cream</h3>
+<p class="font-bold text-gray-700">$15.00</p>
+<button
+  class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+>
+  Add to Cart 💖
+</button>
+</article>
+
+  
+  <article
+    class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+    data-category="face"
+    data-name="Milk Cream"
+    data-price="20.50"
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD93lhHzceot3ShaYinXuKKwZEz0QG-dw7T4q1kPjZZTDxhah5oUZLUWSxvkv4qHBfO_I&usqp=CAU"
+      alt="Milk Cream"
+      class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+    />
+    <h3 class="text-base font-bold text-pink-600 mb-1">Milk Cream</h3>
+    <p class="font-bold text-gray-700">$20.50</p>
+    <button
+      class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+    >
+      Add to Cart 💕
+    </button>
+  </article>
+  
+  
+  <article
+    class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+    data-category="face"
+    data-name="Honey Cream"
+    data-price="15.50"
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS27c7yD9Aq7WYtH5OIZcZVCOm6MWYgOqfqc1FJXCb4KbmJSmkj2DM2AHEDkmHxNVZM2Ck&usqp=CAU"
+      alt="Honey Cream"
+      class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+    />
+    <h3 class="text-base font-bold text-pink-600 mb-1">Honey Cream</h3>
+    <p class="font-bold text-gray-700">$15.50</p>
+    <button
+      class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+    >
+      Add to Cart 💕
+    </button>
+  </article>
+
+  <article
+  class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+  data-category="face"
+  data-name="Night cream Miss Sun flower"
+  data-price="8.50"
+>
+  <img
+    src="https://s9.kh1.co/__image/w=600,h=600,fit=cover/27/275577dd54a88bd281a4299f4a2a0f010dca1442.png"
+    alt="Night cream Miss Sun flower"
+    class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+  />
+  <h3 class="text-base font-bold text-pink-600 mb-1">Night cream Miss Sun flower</h3>
+  <p class="font-bold text-gray-700">$8.50</p>
+  <button
+    class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+  >
+    Add to Cart 💕
+  </button>
+</article>
+
+<article
+  class="product-card bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md border border-pink-100 hover:shadow-lg transition"
+  data-category="skin"
+  data-name="Lotion Miss Sun flower"
+  data-price="50.50"
+>
+  <img
+    src="https://i.ebayimg.com/images/g/ur4AAOSwnghla~LZ/s-l1200.jpg"
+    alt="Lotion Miss Sun flower"
+    class="product-img mb-4 w-28 h-28 object-contain rounded-2xl"
+  />
+  <h3 class="text-base font-bold text-pink-600 mb-1">Lotion Miss Sun flower</h3>
+  <p class="font-bold text-gray-700">$50.50</p>
+  <button
+    class="add-to-cart mt-3 px-2 py-1 text-sm bg-pink-400 text-white rounded-full shadow hover:bg-pink-500 transition"
+  >
+    Add to Cart 💕
+  </button>
+</article>
+
+</section>
+
+ 
+    <div
+      id="cartDrawer"
+      class="fixed top-0 right-0 w-96 h-full bg-pink-50 shadow-lg transform translate-x-full transition-transform duration-300 p-5 flex flex-col border-l-4 border-pink-300"
+    >
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold text-pink-600">🛒 Your Cute Cart</h2>
+        <button
+          id="closeCart"
+          class="text-pink-400 hover:text-pink-600 text-2xl leading-none"
+        >
+          &times;
+        </button>
+      </div>
+
+      <ul id="cartItems" class="flex-grow space-y-3 overflow-y-auto"></ul>
+
+      <div class="mt-4">
+        <input
+          id="promoCode"
+          type="text"
+          placeholder="🎀 Enter promo code"
+          class="w-full px-3 py-2 border rounded-full mb-2 bg-white border-pink-200"
+        />
+        <button
+          id="applyPromo"
+          class="w-full py-2 bg-pink-400 text-white rounded-full shadow hover:bg-pink-500"
+        >
+          Apply Code 💌
+        </button>
+      </div>
+
+      <div class="border-t pt-4 mt-4 space-y-2 text-lg">
+        <p class="flex justify-between text-gray-700">
+          <span>Subtotal:</span> <span id="cartSubtotal">$0.00</span>
+        </p>
+        <p class="flex justify-between text-green-600">
+          <span>Discount:</span> <span id="cartDiscount">-$0.00</span>
+        </p>
+        <p class="flex justify-between font-bold text-xl text-pink-600">
+          <span>Total:</span> <span id="cartTotal">$0.00</span>
+        </p>
+        <button
+          id="checkoutBtn"
+          class="mt-4 w-full py-3 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600"
+        >
+          Checkout 🎀
+        </button>
+      </div>
+    </div>
+
+ 
+    <script>
+      const cartBtn = document.getElementById("cartBtn");
+      const cartDrawer = document.getElementById("cartDrawer");
+      const cartCount = document.getElementById("cartCount");
+      const cartItems = document.getElementById("cartItems");
+      const cartSubtotal = document.getElementById("cartSubtotal");
+      const cartDiscount = document.getElementById("cartDiscount");
+      const cartTotal = document.getElementById("cartTotal");
+      const promoCodeInput = document.getElementById("promoCode");
+      const applyPromoBtn = document.getElementById("applyPromo");
+      const closeCart = document.getElementById("closeCart");
+      const checkoutBtn = document.getElementById("checkoutBtn");
+
+      let cart = [];
+      let discount = 0;
+
+       
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedCart = localStorage.getItem("cart");
+        const savedDiscount = localStorage.getItem("discount");
+        if (savedCart) cart = JSON.parse(savedCart);
+        if (savedDiscount) discount = parseFloat(savedDiscount);
+        updateCart();
+      });
+
+     
+      cartBtn.addEventListener("click", () => {
+        cartDrawer.classList.remove("translate-x-full");
+      });
+      closeCart.addEventListener("click", () => {
+        cartDrawer.classList.add("translate-x-full");
+      });
+
+     
+      document.querySelectorAll(".add-to-cart").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const product = btn.closest(".product-card");
+          const name = product.dataset.name;
+          const price = parseFloat(product.dataset.price);
+          const img = product.querySelector(".product-img");
+
+          flyToCart(img);
+
+          const existing = cart.find((item) => item.name === name);
+          if (existing) {
+            existing.qty++;
+          } else {
+            cart.push({ name, price, qty: 1 });
+          }
+          updateCart();
+        });
+      });
+
+    
+      function updateCart() {
+        let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+        cartCount.textContent = totalQty;
+
+        cartItems.innerHTML = "";
+        let subtotal = 0;
+        cart.forEach((item) => {
+          subtotal += item.price * item.qty;
+
+          const li = document.createElement("li");
+          li.className =
+            "flex justify-between items-center bg-pink-100 p-2 rounded-lg shadow";
+
+          li.innerHTML = `
+            <div>
+              <span class="font-medium text-pink-600">${item.name}</span>
+              <div class="flex items-center gap-2 mt-1">
+                <button class="decrease bg-red-400 text-white px-2 rounded-full">-</button>
+                <span class="text-gray-700">${item.qty}</span>
+                <button class="increase bg-green-400 text-white px-2 rounded-full">+</button>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="block text-gray-700">$${(item.price * item.qty).toFixed(
+                2
+              )}</span>
+            </div>
+          `;
+
+          li.querySelector(".decrease").addEventListener("click", () => {
+            if (item.qty > 1) {
+              item.qty--;
+            } else {
+              cart = cart.filter((i) => i.name !== item.name);
+            }
+            updateCart();
+          });
+          li.querySelector(".increase").addEventListener("click", () => {
+            item.qty++;
+            updateCart();
+          });
+
+          cartItems.appendChild(li);
+        });
+
+        cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+
+        let discountValue = (subtotal * discount) / 100;
+        cartDiscount.textContent = `-$${discountValue.toFixed(2)}`;
+
+        let total = subtotal - discountValue;
+        cartTotal.textContent = `$${total.toFixed(2)}`;
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("discount", discount);
+      }
+
+    
+      applyPromoBtn.addEventListener("click", () => {
+        const code = promoCodeInput.value.trim();
+        if (code === "UCR10") {
+          discount = 10;
+          alert("Yay! 🎀 Promo applied: 10% off!");
+        } else {
+          discount = 0;
+          alert("Oops 💔 Invalid promo code");
+        }
+        updateCart();
+      });
+
+       
+      checkoutBtn.addEventListener("click", () => {
+        alert("✨ Thank you for your order! ✨");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("discount");
+        cart = [];
+        discount = 0;
+        updateCart();
+      });
+
+      
+      function flyToCart(img) {
+        const cartIcon = cartBtn.getBoundingClientRect();
+        const imgRect = img.getBoundingClientRect();
+
+        const flyingImg = img.cloneNode(true);
+        flyingImg.classList.add("flying-img");
+        flyingImg.style.left = imgRect.left + "px";
+        flyingImg.style.top = imgRect.top + "px";
+        flyingImg.style.width = imgRect.width + "px";
+        flyingImg.style.height = imgRect.height + "px";
+        flyingImg.style.position = "fixed";
+
+        document.body.appendChild(flyingImg);
+
+        requestAnimationFrame(() => {
+          flyingImg.style.transform = `translate(${cartIcon.left - imgRect.left}px, ${
+            cartIcon.top - imgRect.top
+          }px) scale(0.2)`;
+          flyingImg.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+          flyingImg.remove();
+        }, 1000);
+      }
+
+   
+      const categoryBtns = document.querySelectorAll(".category-btn");
+      const productCards = document.querySelectorAll(".product-card");
+
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          categoryBtns.forEach((b) =>
+            b.classList.remove("bg-pink-400", "text-white", "active")
+          );
+          categoryBtns.forEach((b) =>
+            b.classList.add("bg-pink-100", "text-pink-600")
+          );
+
+          btn.classList.remove("bg-pink-100", "text-pink-600");
+          btn.classList.add("bg-pink-400", "text-white", "active");
+
+          const category = btn.dataset.category;
+          productCards.forEach((card) => {
+            if (category === "all" || card.dataset.category === category) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+  
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", () => {
+        const searchValue = searchInput.value.toLowerCase();
+        productCards.forEach((card) => {
+          const name = card.dataset.name.toLowerCase();
+          if (name.includes(searchValue)) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
